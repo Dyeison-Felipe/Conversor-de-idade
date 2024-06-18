@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Descobrir Idade</title>
+</head>
+<body>
+  <section class="container">
+    <form id="form">
+      <h1>Descobrir idade</h1>
+      <div class="check">
+        <label class="date_birthday">
+          <input type="radio" name="year-month-day" id="year" />
+          Anos
+        </label>
+  
+        <label class="date_birthday">
+          <input type="radio" name="year-month-day" id="month"/>
+          Mês
+        </label>
+  
+        <label class="date_birthday">
+          <input type="radio" name="year-month-day" id="day" />
+          Dias
+        </label>
+
+        <label class="date_birthday">
+          <input type="radio" name="year-month-day" id="hour">
+          Horas
+        </label>
+
+        <label class="date_birthday">
+          <input type="radio" name="year-month-day" id="minutes">
+          Minutos
+        </label>
+      </div>
+      <div class="form-dates">
+        <div class="content">
+          <p>Digite o ano de seu nascimento</p>
+          <input type="number" id="date-year" name="year_birth" />
+        </div>
+  
+        <div class="content">
+          <p>Digite o mês de seu nascimento</p>
+          <input type="number" id="date-month" name="month_birth" />
+        </div>
+  
+        <div class="content">
+          <p>Digite o dia de seu nascimento</p>
+          <input type="number" id="date-day" name="day_birth"  />
+        </div>
+  
+      </div>
+  
+      <button class="btn" type="button" onclick="calculationBirth()">Calcular</button>
+      
+      <p id="result"></p>
+    </form>
+  </section>
+  <script src="index.js"></script>
+</body>
+</html>
