@@ -20,8 +20,8 @@ const calculationBirth = () => {
   const radioYear = document.getElementById("year");
   const radioMonth = document.getElementById("month");
   const radioDay = document.getElementById("day");
-  const radioHour = document.getElementById("hour")
-  const radioMinutes = document.getElementById("minutes")
+  const radioHour = document.getElementById("hour");
+  const radioMinutes = document.getElementById("minutes");
 
   if (!year || !month || !day) {
     result.innerHTML = "Por favor, preencha todos os campos.";
@@ -43,10 +43,10 @@ const calculationBirth = () => {
     CalculationMonth(year, month, day);
   } else if (radioDay.checked) {
     CalculationDay(year, month, day);
-  } else if(radioHour.checked){
-    CalculationHours(year,month,day)
-  } else if(radioMinutes.checked){
-    CalculationMinutes(year,month,day)
+  } else if (radioHour.checked) {
+    CalculationHours(year, month, day);
+  } else if (radioMinutes.checked) {
+    CalculationMinutes(year, month, day);
   } else {
     result.innerHTML = "Marque uma das opcões acima";
   }
@@ -138,7 +138,7 @@ function CalculationMonth(year, month, day) {
     resultYear--; // subtrai um ano
   }
 
-  let output = "você tem ";
+  let output = "Você tem ";
 
   if (resultMonth == 0) {
   } else if (resultMonth == 1) {
@@ -161,56 +161,54 @@ function CalculationDay(year, month, day) {
   const birthDate = new Date(year, month - 1, day);
   const currentDate = new Date(yearCurrent, monthCurrent - 1, dayCurrent);
 
-  const time = currentDate - birthDate; // retorna a difereça em milisegundos entre a data enviado e a data atual 
+  const time = currentDate - birthDate; // retorna a difereça em milisegundos entre a data enviado e a data atual
 
   const resultDay = Math.floor(time / (1000 * 60 * 60 * 24)); // multiplica 1000 milisegundos por 60 segundo(que compõem um minuto), o resusultado multiplica por 60 minutos(que compõem um hora), o resultado multiplica por 24horas(que compõem o dia), no final divide pelos milisegundo da diferenca do dia enviado e do dia atual
 
   let output = "Você tem ";
 
   if (resultDay == 1) {
-    output += `${resultDay.toLocaleString('pt-br')} dia.`;
+    output += `${resultDay.toLocaleString("pt-br")} dia.`;
   } else if (resultDay > 1) {
-    output += `${resultDay.toLocaleString('pt-br')} dias.`;
+    output += `${resultDay.toLocaleString("pt-br")} dias.`;
   }
 
   result.innerHTML = output.trim();
 }
 
-function CalculationHours(year,month,day){
+function CalculationHours(year, month, day) {
   const birthDate = new Date(year, month - 1, day);
   const currentDate = new Date(yearCurrent, monthCurrent - 1, dayCurrent);
 
-  const time = currentDate - birthDate; // retorna a difereça em milisegundos entre a data enviado e a data atual 
+  const time = currentDate - birthDate; // retorna a difereça em milisegundos entre a data enviado e a data atual
 
   const resultHour = Math.floor(time / (1000 * 60 * 60)); // multiplica 1000 milisegundos por 60 segundo(que compõem um minuto), o resusultado multiplica por 60 minutos(que compõem um hora),  no final divide pelos milisegundo da diferenca do dia enviado e do dia atual
-
 
   let output = "Você tem ";
 
   if (resultHour == 1) {
-    output += `${resultHour.toLocaleString('pt-br')} hora.`;
+    output += `${resultHour.toLocaleString("pt-br")} hora.`;
   } else if (resultHour > 1) {
-    output += `${resultHour.toLocaleString('pt-br')} horas.`;
+    output += `${resultHour.toLocaleString("pt-br")} horas.`;
   }
 
   result.innerHTML = output.trim();
 }
 
-function CalculationMinutes(year,month,day){
+function CalculationMinutes(year, month, day) {
   const birthDate = new Date(year, month - 1, day);
   const currentDate = new Date(yearCurrent, monthCurrent - 1, dayCurrent);
 
-  const time = currentDate - birthDate; // retorna a difereça em milisegundos entre a data enviado e a data atual 
+  const time = currentDate - birthDate; // retorna a difereça em milisegundos entre a data enviado e a data atual
 
-  const resultMinutes = Math.floor(time / (1000 * 60 )); // multiplica 1000 milisegundos por 60 segundo(que compõem um minuto),  no final divide pelos milisegundo da diferenca do dia enviado e do dia atual
-
+  const resultMinutes = Math.floor(time / (1000 * 60)); // multiplica 1000 milisegundos por 60 segundo(que compõem um minuto),  no final divide pelos milisegundo da diferenca do dia enviado e do dia atual
 
   let output = "Você tem ";
 
   if (resultMinutes == 1) {
-    output += `${resultMinutes.toLocaleString('pt-br')} minuto.`;
+    output += `${resultMinutes.toLocaleString("pt-br")} minuto.`;
   } else if (resultMinutes > 1) {
-    output += `${resultMinutes.toLocaleString('pt-br')} minutos.`;
+    output += `${resultMinutes.toLocaleString("pt-br")} minutos.`;
   }
 
   result.innerHTML = output.trim();
